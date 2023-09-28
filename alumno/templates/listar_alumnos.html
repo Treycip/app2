@@ -2,14 +2,26 @@
 <html>
 <head>
     <title>Lista de Alumnos</title>
+    <!-- Agregar enlaces a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Lista de Alumnos</h1>
-    <ul>
-        {% for alumno in alumnos %}
-            <li>{{ alumno.nombre }} {{ alumno.apellido }} - Edad: {{ alumno.edad }}, Grado: {{ alumno.grado }}</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'registrar_alumno' %}">Registrar Alumno</a>
+    <div class="container mt-5">
+        <h1 class="mb-4">Lista de Alumnos</h1>
+        <ul class="list-group">
+            {% for alumno in alumnos %}
+                <li class="list-group-item">
+                    <strong>{{ alumno.nombre }} {{ alumno.apellido }}</strong>
+                    <br>Edad: {{ alumno.edad }}, Grado: {{ alumno.grado }}
+                </li>
+            {% endfor %}
+        </ul>
+        <a class="btn btn-primary mt-3" href="{% url 'registrar_alumno' %}">Registrar Alumno</a>
+    </div>
+
+    <!-- Agregar enlaces a Bootstrap JS (opcional, si necesitas componentes interactivos) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
